@@ -63,7 +63,7 @@ const StyledSoldoutTypography = styled(Typography)({
 export const ProductCard: React.FC<IProduct> = (product:IProduct) => {
 
   const setCart = useSetRecoilState<Array<IProduct>>(cartState);
-  const { id, brand, name, description, size, price, condition, material, quantity, images } = product;
+  const { id, brand, description, size, price, condition, material, quantity, images } = product;
 
   const addToCart = () => {
     console.log(`ADDING ITEM WITH ID ${id} TO CART...!!!`)
