@@ -99,7 +99,7 @@ export const ProductImageList: React.FC<Props> = (props: Props) => {
 
   const rowHeight = 0.9*size[1];
   const rowWidth = 0.9 * size[0] / 3.7;
-  
+  console.log(props.products[0])
   return (
     <div className={classes.root}>
       <ImageList rowHeight={rowHeight} cols={COLS} className={classes.imageList} style={{width: COLS*size[0]}}>
@@ -110,7 +110,7 @@ export const ProductImageList: React.FC<Props> = (props: Props) => {
               state: item
             }}>
               <div className={classes.container}>
-                <img src={`http://localhost:1337${item.images[0].url}`} alt={item.description} className={classes.img} style={{height: rowHeight-10, width: rowWidth}}/>
+                <img src={item.images.length > 0 ? item.images[0].url : ""} alt={item.description} className={classes.img} style={{height: rowHeight-10, width: rowWidth}}/>
                 <div className={classes.overlay}>
                   <p className={classes.textOnImage} style={{color: 'deeppink'}}>
                     {item.brand}

@@ -75,7 +75,7 @@ export const ProductCard: React.FC<IProduct> = (product:IProduct) => {
       <StyledCardContent>
         <StyledMediaDiv>
           {images.map(({id, url}) => ( 
-            <StyledImg src={`http://localhost:1337${url}`} alt={url} key={id}/> 
+            <StyledImg src={url} alt={url} key={id}/> 
           ))}
         </StyledMediaDiv>
         <StyledInfoDiv>

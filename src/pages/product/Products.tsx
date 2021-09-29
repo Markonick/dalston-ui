@@ -13,9 +13,6 @@ export const Products: React.FC = () => {
     ? productData
     : productData.filter(x => x.categories.some(g => Object.values(g).includes(category)));
   
-  console.log(productData)
-  console.log(category)
-  console.log(products)
   return (<div><ProductImageList products={products} /></div>);
 };
 

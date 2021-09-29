@@ -82,7 +82,7 @@ export const CartItem: React.FC<Props> = ({cartItem, removeFromCart}) => {
         <StyledCardContent> 
           <RemoveButton onClick={() => removeFromCart(cartItem.id)}/>     
           <StyledLink to={{ pathname: ROUTES_CONFIG.PRODUCT_DETAIL, state: cartItem }} >
-            <StyledImg src={`http://localhost:1337${cartItem.images[0].url}`} alt={cartItem.name} key={cartItem.id}/>                   
+            <StyledImg src={cartItem.images[0].url} alt={cartItem.name} key={cartItem.id}/>                   
           </StyledLink>
           <div style={{ display: 'flex',
             flexDirection: "column",
