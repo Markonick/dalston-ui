@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@mui/styles';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -21,7 +21,11 @@ type Props = {
 
 export const CartItemsCard: React.FC<Props> = ({cartItems, removeFromCart}) => {
   const classes = useStyles();
-  console.log(cartItems)
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Card className={classes.root} >
       <CardContent>

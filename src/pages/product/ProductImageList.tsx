@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { createStyles, makeStyles } from '@mui/styles';
 import ImageList from '@mui/material/ImageList';
@@ -88,6 +88,11 @@ export const ProductImageList: React.FC<Props> = (props: Props) => {
   const classes = useStyles();
 
   const [size, setSize] = useState([0, 0]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useLayoutEffect(() => {
     const updateSize = () => {
       setSize([window.innerWidth, window.innerHeight * window.innerWidth/window.innerHeight / COLS]);

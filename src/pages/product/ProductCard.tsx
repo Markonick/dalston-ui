@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSetRecoilState } from "recoil";
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
@@ -65,6 +65,10 @@ export const ProductCard: React.FC<IProduct> = (product:IProduct) => {
   const setCart = useSetRecoilState<Array<IProduct>>(cartState);
   const { id, brand, description, size, price, condition, material, quantity, images } = product;
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   const addToCart = () => {
     console.log(`ADDING ITEM WITH ID ${id} TO CART...!!!`)
     setCart(cart => cart.find(item => item.id === id) ? cart : [...cart, product]);
