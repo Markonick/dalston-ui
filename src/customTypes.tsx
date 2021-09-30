@@ -7,6 +7,7 @@ export interface ICategory {
   id: number,
   name: string,
   description: string,
+  products: IProduct[],
 };
 
 export interface IProduct {
@@ -18,8 +19,8 @@ export interface IProduct {
   size: number,
   condition: string,
   category: string,
-  categories: Array<ICategory>,
+  categories: ICategory[],
   material: string,
   quantity: number,
-  images: Array<IImage>,
+  images: IImage[],
 };
