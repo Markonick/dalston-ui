@@ -8,7 +8,7 @@ export const GetProducts = () => {
     
   useEffect(() => {
     const fetchProducts = async () => {
-      await axios.get<IProduct[]>("http://localhost:1337/products").then(response => {
+      await axios.get<IProduct[]>("https://dalston-strapi.herokuapp.com/products").then(response => {
         setProducts(response?.data);
       });
     };
