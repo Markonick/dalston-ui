@@ -10,8 +10,14 @@ export const Products: React.FC = () => {
   const category = new URLSearchParams(search).get("cat") || '';
 
   console.log('CLICKED ON A NAV FILTER!')
-  const products = category === '' ? GetProducts().products : GetCategoryProducts(category).products;
+
+  // const productData = GetProducts().products;
+  const products = category === ''
+    ? GetProducts().products
+    : GetProducts().products.filter(x => x.categories.some(g => Object.values(g).includes(category)));
   
+  // const products = category === '' ? GetProducts().products : GetCategoryProducts(category).products;
+  
+  // console.log(products)
   return (<div><ProductImageList products={products} /></div>);
 };
-

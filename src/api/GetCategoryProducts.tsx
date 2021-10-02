@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { IProduct } from "../customTypes";
+import { IProduct, ICategory } from "../customTypes";
 
 
 export const GetCategoryProducts = (category:string) => {
@@ -10,9 +10,9 @@ export const GetCategoryProducts = (category:string) => {
   
   useEffect(() => {
     const fetchProducts = async () => {
-      await axios.get<IProduct[]>(`${baseUrl}/products?categories.name=${category}`).then(response => {
+      await axios.get<ICategory[]>(`${baseUrl}/categories?name=${category}`).then(response => {
         console.log(response)
-        setProducts(response?.data);
+        setProducts(response?.data[0].products);
       })
       .catch(function (err) {
         console.log(err)

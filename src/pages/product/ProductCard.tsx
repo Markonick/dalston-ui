@@ -61,7 +61,6 @@ const StyledSoldoutTypography = styled(Typography)({
 });
 
 export const ProductCard: React.FC<IProduct> = (product:IProduct) => {
-
   const setCart = useSetRecoilState<Array<IProduct>>(cartState);
   const { id, brand, description, size, price, condition, material, quantity, images } = product;
 
